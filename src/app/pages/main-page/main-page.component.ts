@@ -14,13 +14,11 @@ export class MainPageComponent {
   artObjets: ArtObjet[] | undefined;
   artObjetsCopy: ArtObjet[] | undefined;
   lenguage: string = '';
-  apiURL: string = '';
   pageActual:number = 1;
   constructor(public http: HttpClient) {
     this.lenguage = 'nl';
     this.getData();
-    console.log(this.lenguage);
-    this.apiURL
+    (this.lenguage);
 
   }
 
@@ -28,7 +26,6 @@ export class MainPageComponent {
     const url = environment.apiUrl + this.lenguage + '/collection?key=YE3WmL4m&ps=100'
     await this.http.get<any>(url)
       .subscribe((res) => {
-        console.log(res.artObjects);
 
         this.artObjets = res.artObjects.map(({ id, title, principalOrFirstMaker, webImage, objectNumber, longTitle, permitDownload }: ArtObjet) => {
           return {
@@ -41,8 +38,6 @@ export class MainPageComponent {
             permitDownload: permitDownload,
           };
         });
-        console.log(this.artObjets);
-
         this.artObjetsCopy = this.artObjets;
       });
 
@@ -51,7 +46,6 @@ export class MainPageComponent {
 
   filter(e: any) {
     const search: string = e.target.value;
-    console.log({ search });
     this.artObjets = this.artObjetsCopy?.filter(({title,principalOrFirstMaker}: ArtObjet) => {
       return (title.toLowerCase().includes(search.toLowerCase()) || principalOrFirstMaker.toLowerCase().includes(search.toLowerCase()));
      });
@@ -59,7 +53,6 @@ export class MainPageComponent {
 
   }
   changeLenguage(a: string) {
-    console.log(a);
     this.lenguage = a;
     this.getData();
 

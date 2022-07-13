@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
     MainPageComponent,
     CardComponent,
     DetailPageComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

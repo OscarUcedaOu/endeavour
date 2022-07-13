@@ -8,9 +8,6 @@ export interface ArtObjet {
   permitDownload: string;
 }
 
-// interface WebImage {
-//   url: string;
-// }
 export interface Image {
   url: string;
 }

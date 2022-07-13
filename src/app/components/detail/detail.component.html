@@ -1,0 +1,44 @@
+<div class="container">
+
+  <h1 class="my-4">{{artObjet.title}}
+    <h4>{{artObjet.priref}}</h4>
+  </h1>
+
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="{{artObjet.webImage.url}}" alt="">
+    </div>
+
+    <div class="my-4">
+      <h3 class="my-3">Description</h3>
+      <p>{{artObjet.description}}</p>
+
+    </div>
+
+  </div>
+
+  <h3 class="my-4">More Information</h3>
+  <ul>
+    <li>Principal Maker: {{artObjet.principalMaker}}</li>
+    <li>
+      Dimensions
+    </li>
+    <ul *ngFor="let dimension of artObjet.dimensions">
+      <li>Type:{{dimension.type}}  Value:{{dimension.value}}{{dimension.unit}}</li>
+    </ul>
+    <li>Physical Medium:{{artObjet.physicalMedium}}</li>
+    <li>Acquisition</li>
+      <ul>
+        <li>{{artObjet.acquisition.date}}</li>
+        <li>{{artObjet.acquisition.method}}</li>
+      </ul>
+    <li>Documentation</li>
+      <ul *ngFor="let documentation of artObjet.documentation">
+        <li>{{documentation}}</li>
+
+      </ul>
+  </ul>
+
+
+</div>
