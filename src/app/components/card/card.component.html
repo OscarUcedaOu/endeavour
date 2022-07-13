@@ -1,0 +1,12 @@
+<div class="card my-3">
+  <img src="{{artObjet.webImage.url}}" style="height:23em;"class="card-img-top" alt="{{artObjet.objectNumber}}">
+  <div class="card-body">
+    <h5 class="card-title">{{artObjet?.title}}</h5>
+    <p class="card-muted">{{artObjet?.longTitle}}</p>
+  <hr>
+  <div class="row text-left">
+    <p class="text-muted">{{artObjet?.principalOrFirstMaker}}</p>
+  </div>
+    <a  routerLink="detail"class="btn btn-primary">More Detail</a>
+  </div>
+</div>

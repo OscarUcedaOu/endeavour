@@ -1,0 +1,18 @@
+<div class="container my-5">
+  <select #lenguage class="selectpicker" data-width="fit" (change)="changeLenguage(lenguage.value)">
+    <option value="nl">Dutch</option>
+    <option value="en">English</option>
+  </select>
+  <h1>Rijksstudio Museum</h1>
+  <hr />
+  <input type="text" class="form-control" placeholder="Search..." (input)=filter($event)>
+  <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+  <div class="row" *ngIf="artObjets">
+    <div *ngFor="let artobjet of artObjets | paginate: { itemsPerPage: 10, currentPage: pageActual }" class="col-xl-4 col-sm-6-col-xs-12">
+        <app-card [artObjet]="artobjet"></app-card>
+    </div>
+  </div>
+  <div class="row center"></div>
+
+</div>
+
