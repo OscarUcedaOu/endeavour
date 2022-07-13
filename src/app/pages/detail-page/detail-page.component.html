@@ -1,0 +1,11 @@
+<div class="container my-5" *ngIf="artObjet">
+  <button type="button" routerLink="/"class="btn btn-secondary">Back</button>
+  <hr>
+  <select #lenguage class="selectpicker" data-width="fit" (change)="changeLenguage(lenguage.value)">
+    <option value="nl">Dutch</option>
+    <option value="en">English</option>
+  </select>
+  <app-detail [artObjet]="artObjet"></app-detail>
+</div>
+
+
