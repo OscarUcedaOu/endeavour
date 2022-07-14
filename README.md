@@ -35,3 +35,7 @@ Because of time and because I am not at the moment with the best computer equipm
 
 -Better structuring in git, since I didn't follow any rules for uploading commits. 
 
+-Add Lazy Loading to optimize routes
+
+-Normally I make services for APi requests but with little time and only 2 calls I preferred not to create them and I also deleted the .spect since I wasn't going to use them. 
+

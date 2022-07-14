@@ -14,7 +14,7 @@ export class MainPageComponent {
   artObjets: ArtObjet[] | undefined;
   artObjetsCopy: ArtObjet[] | undefined;
   lenguage: string = '';
-  pageActual:number = 1;
+  pageActual: number = 1;
   constructor(public http: HttpClient) {
     this.lenguage = 'nl';
     this.getData();
@@ -44,16 +44,16 @@ export class MainPageComponent {
 
   }
 
-  filter(e: any) {
-    const search: string = e.target.value;
-    this.artObjets = this.artObjetsCopy?.filter(({title,principalOrFirstMaker}: ArtObjet) => {
+  filter(event: any) {
+    const search: string = event.target.value;
+    this.artObjets = this.artObjetsCopy?.filter(({ title, principalOrFirstMaker }: ArtObjet) => {
       return (title.toLowerCase().includes(search.toLowerCase()) || principalOrFirstMaker.toLowerCase().includes(search.toLowerCase()));
-     });
+    });
 
 
   }
-  changeLenguage(a: string) {
-    this.lenguage = a;
+  changeLenguage(lenguage: string): void {
+    this.lenguage = lenguage;
     this.getData();
 
   }

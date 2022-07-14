@@ -22,7 +22,7 @@ export class DetailPageComponent {
     this.apiURL
   }
 
-  async getData(id: any) {
+  async getData(id: string) {
     const url = environment.apiUrl + this.lenguage + '/collection/' + id + '?key=YE3WmL4m';
     await this.http.get<any>(url)
       .subscribe((res) => {
@@ -33,8 +33,8 @@ export class DetailPageComponent {
 
 
   }
-  changeLenguage(a: string) {
-    this.lenguage = a;
+  changeLenguage(lenguage: string): void {
+    this.lenguage = lenguage;
     this.activatedRoute.params.subscribe(params => {
       this.getData(params['id'])
     });
